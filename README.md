@@ -2,4 +2,11 @@
 
 ## PROJETO EM DESENVOLVIMENTO
 
-Aplicativo de uma rede geossocial para parques ecológicos 
+Protótipo de aplicativo de uma rede geossocial para parques ecológicos 
+<hr>
+
+### Teste de design da home page do protótipo
+
+<p align="center">
+<img src="midia/home_page.jpg">
+</p>
