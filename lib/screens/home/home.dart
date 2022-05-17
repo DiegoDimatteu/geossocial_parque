@@ -11,7 +11,19 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 150,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.blue,
+        title: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 70.0),
+            child: Container(
+                child: Row(
+              children: const [
+                ImageIcon(AssetImage('assets/image/logo.svg'), size: 12),
+                Text('LinkPark'),
+              ],
+            )),
+          ),
+        ),
         elevation: 0,
         leading: Builder(
           builder: (BuildContext context) {
@@ -42,12 +54,12 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: const [
             ItenBotonMenu(
-              icon: Icons.location_on_outlined,
-              text: 'Localização',
+              icon: Icons.social_distance_sharp,
+              text: 'Georede',
             ),
             ItenBotonMenu(
-              icon: Icons.location_on_outlined,
-              text: 'Localização',
+              icon: Icons.device_unknown,
+              text: 'Curiosidades',
             ),
             ItenBotonMenu(
               icon: Icons.location_on_outlined,

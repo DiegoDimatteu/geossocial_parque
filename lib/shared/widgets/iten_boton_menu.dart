@@ -4,10 +4,9 @@ import 'package:supercharged/supercharged.dart';
 class ItenBotonMenu extends StatelessWidget {
   final IconData icon;
   final String text;
-  final VoidCallback? clique;
+  // final VoidCallback? clique;
 
-  const ItenBotonMenu(
-      {Key? key, required this.icon, required this.text, this.clique})
+  const ItenBotonMenu({Key? key, required this.icon, required this.text})
       : super(key: key);
 
   @override
