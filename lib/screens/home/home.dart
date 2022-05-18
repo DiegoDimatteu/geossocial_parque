@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geossocial_parque/shared/widgets/header.dart';
 import 'package:geossocial_parque/shared/widgets/iten_boton_menu.dart';
 import 'package:supercharged/supercharged.dart';
 /*import 'package:supercharged/supercharged.dart';*/
@@ -9,19 +10,26 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         toolbarHeight: 150,
-        backgroundColor: Colors.blue,
-        title: Center(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 70.0),
-            child: Container(
-                child: Row(
-              children: const [
-                ImageIcon(AssetImage('assets/image/logo.svg'), size: 12),
-                Text('LinkPark'),
-              ],
-            )),
+        backgroundColor: Colors.transparent,
+        title: Padding(
+          padding: const EdgeInsets.only(top: 55),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Image.asset(
+                'assets/image/logo.png',
+                fit: BoxFit.cover,
+                height: 100,
+                width: 100,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              const Text('LinkPark'),
+            ],
           ),
         ),
         elevation: 0,
@@ -39,9 +47,10 @@ class Home extends StatelessWidget {
             );
           },
         ),
-      ),
+      ), */
+      appBar: Header(),
       drawer: Container(
-        child: FlutterLogo(),
+        child: const FlutterLogo(),
         width: MediaQuery.of(context).size.width * .6,
         height: MediaQuery.of(context).size.height,
         color: Colors.grey,
