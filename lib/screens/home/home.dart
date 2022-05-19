@@ -1,53 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:geossocial_parque/screens/home/widgets/card_app_home.dart';
 import 'package:geossocial_parque/shared/widgets/header.dart';
-import 'package:geossocial_parque/shared/widgets/iten_boton_menu.dart';
+import 'package:geossocial_parque/screens/home/widgets/button_menu_home.dart';
 import 'package:supercharged/supercharged.dart';
 /*import 'package:supercharged/supercharged.dart';*/
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
-        toolbarHeight: 150,
-        backgroundColor: Colors.transparent,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 55),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Image.asset(
-                'assets/image/logo.png',
-                fit: BoxFit.cover,
-                height: 100,
-                width: 100,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              const Text('LinkPark'),
-            ],
-          ),
-        ),
-        elevation: 0,
-        leading: Builder(
-          builder: (BuildContext context) {
-            return Padding(
-              padding: const EdgeInsets.only(left: 25, top: 40),
-              child: IconButton(
-                icon: const Icon(Icons.menu),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-              ),
-            );
-          },
-        ),
-      ), */
       appBar: Header(),
       drawer: Container(
         child: const FlutterLogo(),
@@ -56,6 +24,11 @@ class Home extends StatelessWidget {
         color: Colors.grey,
       ),
       backgroundColor: "004B23".toColor(),
+      body: Stack(
+        children: const [
+          CardAppHome(),
+        ],
+      ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 100.0, left: 35, right: 35),
         child: Row(
