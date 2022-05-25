@@ -5,7 +5,7 @@ class Header extends PreferredSize {
   Header({Key? key})
       : super(
             key: key,
-            preferredSize: const Size.fromHeight(150),
+            preferredSize: const Size.fromHeight(160),
             child: Container(
               color: Colors.transparent,
               child: Padding(
@@ -37,7 +37,7 @@ class Header extends PreferredSize {
                       children: [
                         Image.asset(
                           'assets/image/logo.png',
-                          fit: BoxFit.cover,
+                          fit: BoxFit.contain,
                           height: 100,
                           width: 100,
                         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geossocial_parque/screens/curiosidades/curiosidades_a.dart';
 import 'package:supercharged/supercharged.dart';
 
 class ItenBotonMenu extends StatelessWidget {
@@ -37,7 +38,14 @@ class ItenBotonMenu extends StatelessWidget {
             ),
           ],
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext ctx) => const CuriosidadesA(),
+            ),
+          );
+        },
       ),
     );
   }
