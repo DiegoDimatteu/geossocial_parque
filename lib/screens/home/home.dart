@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:geossocial_parque/screens/home/widgets/button_menu_home.dart';
 import 'package:geossocial_parque/screens/home/widgets/card_app_home.dart';
 import 'package:geossocial_parque/shared/widgets/header.dart';
-import 'package:geossocial_parque/screens/home/widgets/button_menu_home.dart';
 import 'package:supercharged/supercharged.dart';
+
+import '../../shared/utils/routes.dart';
 /*import 'package:supercharged/supercharged.dart';*/
 
 class Home extends StatefulWidget {
@@ -38,14 +40,17 @@ class _HomeState extends State<Home> {
             ItenBotonMenu(
               icon: Icons.social_distance_sharp,
               text: 'Georede',
+              route: AppRoutes.georedeA,
             ),
             ItenBotonMenu(
               icon: Icons.device_unknown,
               text: 'Curiosidades',
+              route: AppRoutes.curiosidadesA,
             ),
             ItenBotonMenu(
               icon: Icons.location_on_outlined,
               text: 'Localização',
+              route: AppRoutes.localizacaoA,
             ),
           ],
         ),

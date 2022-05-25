@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:geossocial_parque/screens/curiosidades/curiosidades_a.dart';
+import 'package:geossocial_parque/shared/utils/routes.dart';
 import 'package:supercharged/supercharged.dart';
 
 class ItenBotonMenu extends StatelessWidget {
   final IconData icon;
   final String text;
+  final String route;
   // final VoidCallback? clique;
 
-  const ItenBotonMenu({Key? key, required this.icon, required this.text})
-      : super(key: key);
+  const ItenBotonMenu({
+    Key? key,
+    required this.icon,
+    required this.text,
+    required this.route,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +44,7 @@ class ItenBotonMenu extends StatelessWidget {
           ],
         ),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (BuildContext ctx) => const CuriosidadesA(),
-            ),
-          );
+          Navigator.pushNamed(context, route);
         },
       ),
     );
