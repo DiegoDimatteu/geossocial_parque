@@ -18,8 +18,8 @@ class ItenBotonMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
-      width: 100,
+      height: 95,
+      width: 95,
       child: ElevatedButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all("EBF2FA".toColor()),

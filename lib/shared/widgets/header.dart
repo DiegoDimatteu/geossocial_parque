@@ -29,7 +29,7 @@ class Header extends PreferredSize {
                       },
                     ),
                     const SizedBox(
-                      width: 75,
+                      width: 30,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

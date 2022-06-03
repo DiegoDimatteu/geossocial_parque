@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
         child: const FlutterLogo(),
         width: MediaQuery.of(context).size.width * .6,
         height: MediaQuery.of(context).size.height,
-        color: Colors.grey,
+        color: const Color.fromRGBO(235, 242, 250, 1),
       ),
       backgroundColor: "004B23".toColor(),
       body: Stack(
@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
         ],
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(bottom: 100.0, left: 35, right: 35),
+        padding: const EdgeInsets.only(bottom: 40.0, left: 20, right: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.end,
