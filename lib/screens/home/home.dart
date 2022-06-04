@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geossocial_parque/screens/home/widgets/button_menu_home.dart';
 import 'package:geossocial_parque/screens/home/widgets/card_app_home.dart';
+import 'package:geossocial_parque/screens/home/widgets/dots_home.dart';
 import 'package:geossocial_parque/shared/widgets/header.dart';
 import 'package:supercharged/supercharged.dart';
 
@@ -15,6 +16,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  late int _currentIndex;
+
+  void initState() {
+    super.initState();
+    _currentIndex = 0;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,8 +35,19 @@ class _HomeState extends State<Home> {
       ),
       backgroundColor: "004B23".toColor(),
       body: Stack(
-        children: const [
-          CardAppHome(),
+        alignment: Alignment.topCenter,
+        children: [
+          CardAppHome(
+            onChanged: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+          ),
+          DotsHome(
+            currentIndex: _currentIndex,
+            position: 410,
+          ),
         ],
       ),
       bottomNavigationBar: Padding(

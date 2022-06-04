@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'card_app.dart';
 
 class CardAppHome extends StatelessWidget {
-  const CardAppHome({Key? key}) : super(key: key);
+  final ValueChanged<int> onChanged;
+
+  const CardAppHome({Key? key, required this.onChanged}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +14,7 @@ class CardAppHome extends StatelessWidget {
       left: 0,
       right: 0,
       child: PageView(
+        onPageChanged: onChanged,
         physics: const BouncingScrollPhysics(),
         children: const <Widget>[
           CardApp(
