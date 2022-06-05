@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:geossocial_parque/screens/curiosidades/curiosidades_a.dart';
+import 'package:geossocial_parque/screens/curiosidades/curiosidades_b.dart';
+import 'package:geossocial_parque/screens/curiosidades/curiosidades_c.dart';
 import 'package:geossocial_parque/screens/georede/georede_a.dart';
+import 'package:geossocial_parque/screens/georede/georede_b.dart';
+import 'package:geossocial_parque/screens/georede/georede_c.dart';
 import 'package:geossocial_parque/screens/home/home.dart';
 import 'package:geossocial_parque/screens/localizacao/localizacao_a.dart';
+import 'package:geossocial_parque/screens/localizacao/localizacao_b.dart';
+import 'package:geossocial_parque/screens/localizacao/localizacao_c.dart';
 import 'package:geossocial_parque/shared/utils/routes.dart';
 
 void main() {
@@ -20,8 +26,14 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.home: (_) => const Home(),
         AppRoutes.georedeA: (_) => const GeoredeA(),
+        AppRoutes.georedeB: (_) => const GeoredeB(),
+        AppRoutes.georedeC: (_) => const GeoredeC(),
         AppRoutes.curiosidadesA: (_) => const CuriosidadesA(),
+        AppRoutes.curiosidadesB: (_) => const CuriosidadesB(),
+        AppRoutes.curiosidadesC: (_) => const CuriosidadesC(),
         AppRoutes.localizacaoA: (_) => const LocalizacaoA(),
+        AppRoutes.localizacaoB: (_) => const LocalizacaoB(),
+        AppRoutes.localizacaoC: (_) => const LocalizacaoC(),
       },
     );
   }

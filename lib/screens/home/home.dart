@@ -18,6 +18,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   late int _currentIndex;
 
+  @override
   void initState() {
     super.initState();
     _currentIndex = 0;
@@ -55,21 +56,30 @@ class _HomeState extends State<Home> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.end,
-          children: const [
+          children: [
             ItenBotonMenu(
               icon: Icons.social_distance_sharp,
               text: 'Georede',
-              route: AppRoutes.georedeA,
+              currentIndex: _currentIndex,
+              route1: AppRoutes.georedeA,
+              route2: AppRoutes.georedeB,
+              route3: AppRoutes.georedeC,
             ),
             ItenBotonMenu(
               icon: Icons.device_unknown,
               text: 'Curiosidades',
-              route: AppRoutes.curiosidadesA,
+              currentIndex: _currentIndex,
+              route1: AppRoutes.curiosidadesA,
+              route2: AppRoutes.curiosidadesB,
+              route3: AppRoutes.curiosidadesC,
             ),
             ItenBotonMenu(
               icon: Icons.location_on_outlined,
               text: 'Localização',
-              route: AppRoutes.localizacaoA,
+              currentIndex: _currentIndex,
+              route1: AppRoutes.localizacaoA,
+              route2: AppRoutes.localizacaoB,
+              route3: AppRoutes.localizacaoC,
             ),
           ],
         ),
