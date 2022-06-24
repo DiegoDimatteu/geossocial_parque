@@ -12,6 +12,7 @@ class PublishPost extends StatelessWidget {
       decoration: BoxDecoration(
         color: "EBF2FA".toColor(),
         borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.green),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
