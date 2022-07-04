@@ -63,6 +63,10 @@ flutter:
     - assets/image/logo.png
     - assets/image/logo.svg
     - assets/image/cortado.png
+    - assets/image/parque_cortado.png
+    - assets/image/cachoeira_cortado.jpg
+    - assets/image/taguaparque_entrada.jpg
+    - assets/image/taguaparque_portao.jpg
 
   #   - images/a_dot_ham.jpeg
 

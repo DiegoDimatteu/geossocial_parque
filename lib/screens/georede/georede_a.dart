@@ -4,9 +4,14 @@ import 'package:geossocial_parque/screens/georede/widgets/post_published.dart';
 import 'package:geossocial_parque/screens/georede/widgets/publish_post.dart';
 import 'package:supercharged/supercharged.dart';
 
-class GeoredeA extends StatelessWidget {
+class GeoredeA extends StatefulWidget {
   const GeoredeA({Key? key}) : super(key: key);
 
+  @override
+  State<GeoredeA> createState() => _GeoredeAState();
+}
+
+class _GeoredeAState extends State<GeoredeA> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,19 +34,19 @@ class GeoredeA extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            const PostPublished(),
+            const PostPublished(image: 'assets/image/parque_cortado.png'),
             const SizedBox(
               height: 15,
             ),
-            const PostPublished(),
+            const PostPublished(image: 'assets/image/cachoeira_cortado.jpg'),
             const SizedBox(
               height: 15,
             ),
-            const PostPublished(),
+            const PostPublished(image: 'assets/image/taguaparque_entrada.jpg'),
             const SizedBox(
               height: 15,
             ),
-            const PostPublished(),
+            const PostPublished(image: 'assets/image/taguaparque_portao.jpg'),
           ],
         ),
       ),
