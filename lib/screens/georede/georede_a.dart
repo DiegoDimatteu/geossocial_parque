@@ -17,7 +17,53 @@ class _GeoredeAState extends State<GeoredeA> {
     return Scaffold(
       backgroundColor: "004B23".toColor(),
       drawer: Container(
-        child: const FlutterLogo(),
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: "004B23".toColor(),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Diego Dimatteu',
+                    style: TextStyle(
+                      color: Color.fromRGBO(235, 242, 250, 1),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    height: 35,
+                    width: 35,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: "EBF2FA".toColor(),
+                      border: Border.all(color: Colors.grey),
+                    ),
+                    child: const Icon(Icons.person, size: 25),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              title: const Text('Sair'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+          ],
+        ),
         width: MediaQuery.of(context).size.width * .6,
         height: MediaQuery.of(context).size.height,
         color: const Color.fromRGBO(235, 242, 250, 1),

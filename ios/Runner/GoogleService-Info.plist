@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>3921317370-pbdc5tuli9k4ruu4b4ov0d0l0p32vtun.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.3921317370-pbdc5tuli9k4ruu4b4ov0d0l0p32vtun</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAG1GNx61XgZ3dnpDTRfCWVlXJf0LCIvg0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>3921317370</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.geossocialParque</string>
+	<key>PROJECT_ID</key>
+	<string>geossocial-tcc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>geossocial-tcc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:3921317370:ios:13094c189403614b466843</string>
+</dict>
+</plist>

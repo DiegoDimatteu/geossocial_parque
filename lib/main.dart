@@ -1,4 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:geossocial_parque/firebase_options.dart';
 import 'package:geossocial_parque/screens/curiosidades/curiosidades_a.dart';
 import 'package:geossocial_parque/screens/curiosidades/curiosidades_b.dart';
 import 'package:geossocial_parque/screens/curiosidades/curiosidades_c.dart';
@@ -11,7 +13,11 @@ import 'package:geossocial_parque/screens/localizacao/localizacao_b.dart';
 import 'package:geossocial_parque/screens/localizacao/localizacao_c.dart';
 import 'package:geossocial_parque/shared/utils/routes.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

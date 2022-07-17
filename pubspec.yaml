@@ -35,6 +35,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   supercharged: ^2.1.1
+  firebase_auth: ^3.4.2
+  firebase_core: ^1.19.2
+  google_sign_in: ^5.4.0
 
 dev_dependencies:
   flutter_test:
@@ -65,8 +68,14 @@ flutter:
     - assets/image/cortado.png
     - assets/image/parque_cortado.png
     - assets/image/cachoeira_cortado.jpg
+    - assets/image/ponte_cortado.jpg
+    - assets/image/drone_cortado.jpg
     - assets/image/taguaparque_entrada.jpg
+    - assets/image/drone_taguaparque.jpg
+    - assets/image/parquinho_taguaparque.jpg
     - assets/image/taguaparque_portao.jpg
+    - assets/image/reforma_aguas.jpg
+    - assets/image/capivara_aguas.jpg
 
   #   - images/a_dot_ham.jpeg
 
@@ -81,10 +90,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: title
+      fonts:
+        - asset: assets/fonts/SecularOne-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

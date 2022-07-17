@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "3921317370",
+    "project_id": "geossocial-tcc",
+    "storage_bucket": "geossocial-tcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3921317370:android:9982a95adaa4f978466843",
+        "android_client_info": {
+          "package_name": "com.example.geossocial_parque"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3921317370-frfr5bic518doav9ln52d5oo2qbt6btr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUO1d5g1YZLn_DyUtn8dCd8pBvXkrsOXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3921317370-frfr5bic518doav9ln52d5oo2qbt6btr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
