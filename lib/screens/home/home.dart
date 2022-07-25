@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geossocial_parque/screens/home/widgets/button_menu_home.dart';
 import 'package:geossocial_parque/screens/home/widgets/card_app_home.dart';
 import 'package:geossocial_parque/screens/home/widgets/dots_home.dart';
 import 'package:geossocial_parque/shared/widgets/header.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supercharged/supercharged.dart';
 
 import '../../shared/utils/routes.dart';
@@ -17,11 +19,17 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   late int _currentIndex;
+  final user = FirebaseAuth.instance.currentUser;
 
   @override
   void initState() {
     super.initState();
     _currentIndex = 0;
+    /* FirebaseAuth.instance.authStateChanges().listen((User? user) async {
+      if (user != null) {
+        final userName = user.email;
+      }
+    }); */
   }
 
   @override
@@ -38,9 +46,9 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Diego Dimatteu',
-                    style: TextStyle(
+                  Text(
+                    '${user!.displayName}',
+                    style: const TextStyle(
                       color: Color.fromRGBO(235, 242, 250, 1),
                     ),
                   ),
@@ -48,23 +56,28 @@ class _HomeState extends State<Home> {
                     height: 20,
                   ),
                   Container(
-                    height: 35,
-                    width: 35,
+                    height: 50,
+                    width: 50,
                     decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('${user!.photoURL}'),
+                        fit: BoxFit.cover,
+                      ),
                       shape: BoxShape.circle,
-                      color: "EBF2FA".toColor(),
                       border: Border.all(color: Colors.grey),
                     ),
-                    child: const Icon(Icons.person, size: 25),
                   ),
                 ],
               ),
             ),
             ListTile(
               title: const Text('Sair'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
+              onTap: () async {
+                final GoogleSignIn googleSignIn = GoogleSignIn();
+                await googleSignIn.signOut();
+                await FirebaseAuth.instance.signOut();
+
+                Navigator.of(context).pushNamed(AppRoutes.login);
               },
             ),
           ],

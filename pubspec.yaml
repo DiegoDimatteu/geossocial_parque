@@ -38,6 +38,11 @@ dependencies:
   firebase_auth: ^3.4.2
   firebase_core: ^1.19.2
   google_sign_in: ^5.4.0
+  geolocator: ^9.0.1
+  flutter_config: ^2.0.0
+  google_maps_flutter: ^2.1.9
+  provider: ^6.0.3
+
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +81,7 @@ flutter:
     - assets/image/taguaparque_portao.jpg
     - assets/image/reforma_aguas.jpg
     - assets/image/capivara_aguas.jpg
+    - assets/image/google.png
 
   #   - images/a_dot_ham.jpeg
 

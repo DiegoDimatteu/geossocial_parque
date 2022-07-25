@@ -3,10 +3,15 @@ import 'package:geossocial_parque/screens/georede/widgets/button_custom.dart';
 import 'package:geossocial_parque/screens/georede/widgets/button_like.dart';
 import 'package:supercharged/supercharged.dart';
 
-class PostPublished extends StatelessWidget {
+class PostPublished extends StatefulWidget {
   final String image;
   const PostPublished({Key? key, required this.image}) : super(key: key);
 
+  @override
+  State<PostPublished> createState() => _PostPublishedState();
+}
+
+class _PostPublishedState extends State<PostPublished> {
   @override
   Widget build(BuildContext context) {
     Color cor = Colors.green;
@@ -50,7 +55,7 @@ class PostPublished extends StatelessWidget {
           SizedBox(
             height: 250,
             width: 350,
-            child: Image.asset(image),
+            child: Image.asset(widget.image),
           ),
           const SizedBox(
             height: 15,
@@ -59,7 +64,7 @@ class PostPublished extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: const [
               ButtonLike(
-                icon: Icons.sentiment_very_satisfied,
+                icon: Icons.thumb_up_alt_sharp,
                 text: '',
               ),
               ButtonCustom(icon: Icons.comment_outlined),

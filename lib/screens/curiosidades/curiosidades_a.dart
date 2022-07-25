@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geossocial_parque/screens/curiosidades/widgets/card_app_curiosidades.dart';
+import 'package:geossocial_parque/shared/utils/routes.dart';
 import 'package:geossocial_parque/shared/widgets/header.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supercharged/supercharged.dart';
 
 class CuriosidadesA extends StatelessWidget {
@@ -8,6 +11,7 @@ class CuriosidadesA extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       backgroundColor: "004B23".toColor(),
       appBar: Header(),
@@ -21,9 +25,9 @@ class CuriosidadesA extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Diego Dimatteu',
-                    style: TextStyle(
+                  Text(
+                    '${user!.displayName}',
+                    style: const TextStyle(
                       color: Color.fromRGBO(235, 242, 250, 1),
                     ),
                   ),
@@ -31,14 +35,16 @@ class CuriosidadesA extends StatelessWidget {
                     height: 20,
                   ),
                   Container(
-                    height: 35,
-                    width: 35,
+                    height: 50,
+                    width: 50,
                     decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('${user.photoURL}'),
+                        fit: BoxFit.cover,
+                      ),
                       shape: BoxShape.circle,
-                      color: "EBF2FA".toColor(),
                       border: Border.all(color: Colors.grey),
                     ),
-                    child: const Icon(Icons.person, size: 25),
                   ),
                 ],
               ),
@@ -46,22 +52,24 @@ class CuriosidadesA extends StatelessWidget {
             ListTile(
               title: const Text('Home'),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Navigator.of(context).pushNamed(AppRoutes.home);
               },
             ),
             ListTile(
               title: const Text('Sair'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
+              onTap: () async {
+                final GoogleSignIn googleSignIn = GoogleSignIn();
+                await googleSignIn.signOut();
+                await FirebaseAuth.instance.signOut();
+
+                Navigator.of(context).pushNamed(AppRoutes.login);
               },
             ),
           ],
         ),
         width: MediaQuery.of(context).size.width * .6,
         height: MediaQuery.of(context).size.height,
-        color: Colors.grey,
+        color: const Color.fromRGBO(235, 242, 250, 1),
       ),
       body: Stack(
         children: const [

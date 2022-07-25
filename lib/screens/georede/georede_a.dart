@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geossocial_parque/screens/georede/widgets/header_georede.dart';
 import 'package:geossocial_parque/screens/georede/widgets/post_published.dart';
 import 'package:geossocial_parque/screens/georede/widgets/publish_post.dart';
+import 'package:geossocial_parque/shared/utils/routes.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supercharged/supercharged.dart';
 
 class GeoredeA extends StatefulWidget {
@@ -12,6 +15,7 @@ class GeoredeA extends StatefulWidget {
 }
 
 class _GeoredeAState extends State<GeoredeA> {
+  final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +30,9 @@ class _GeoredeAState extends State<GeoredeA> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Diego Dimatteu',
-                    style: TextStyle(
+                  Text(
+                    '${user!.displayName}',
+                    style: const TextStyle(
                       color: Color.fromRGBO(235, 242, 250, 1),
                     ),
                   ),
@@ -36,14 +40,16 @@ class _GeoredeAState extends State<GeoredeA> {
                     height: 20,
                   ),
                   Container(
-                    height: 35,
-                    width: 35,
+                    height: 50,
+                    width: 50,
                     decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage('${user!.photoURL}'),
+                        fit: BoxFit.cover,
+                      ),
                       shape: BoxShape.circle,
-                      color: "EBF2FA".toColor(),
                       border: Border.all(color: Colors.grey),
                     ),
-                    child: const Icon(Icons.person, size: 25),
                   ),
                 ],
               ),
@@ -51,15 +57,17 @@ class _GeoredeAState extends State<GeoredeA> {
             ListTile(
               title: const Text('Home'),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Navigator.of(context).pushNamed(AppRoutes.home);
               },
             ),
             ListTile(
               title: const Text('Sair'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
+              onTap: () async {
+                final GoogleSignIn googleSignIn = GoogleSignIn();
+                await googleSignIn.signOut();
+                await FirebaseAuth.instance.signOut();
+
+                Navigator.of(context).pushNamed(AppRoutes.login);
               },
             ),
           ],

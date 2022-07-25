@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_config/flutter_config.dart';
 import 'package:geossocial_parque/firebase_options.dart';
 import 'package:geossocial_parque/screens/curiosidades/curiosidades_a.dart';
 import 'package:geossocial_parque/screens/curiosidades/curiosidades_b.dart';
@@ -11,14 +12,19 @@ import 'package:geossocial_parque/screens/home/home.dart';
 import 'package:geossocial_parque/screens/localizacao/localizacao_a.dart';
 import 'package:geossocial_parque/screens/localizacao/localizacao_b.dart';
 import 'package:geossocial_parque/screens/localizacao/localizacao_c.dart';
+import 'package:geossocial_parque/screens/localizacao/repositories/parque_repository.dart';
+import 'package:geossocial_parque/screens/login/login.dart';
 import 'package:geossocial_parque/shared/utils/routes.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  await FlutterConfig.loadEnvVariables();
+  runApp(ChangeNotifierProvider<ParquesRepository>(
+      create: (_) => ParquesRepository(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -30,6 +36,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
+        AppRoutes.login: (_) => const Login(),
         AppRoutes.home: (_) => const Home(),
         AppRoutes.georedeA: (_) => const GeoredeA(),
         AppRoutes.georedeB: (_) => const GeoredeB(),

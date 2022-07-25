@@ -5,8 +5,13 @@ class ButtonLike extends StatefulWidget {
   final int like;
   final IconData icon;
   final String text;
+  final Color cor;
   const ButtonLike(
-      {Key? key, this.like = 0, required this.icon, required this.text})
+      {Key? key,
+      this.like = 0,
+      required this.icon,
+      required this.text,
+      this.cor = Colors.black})
       : super(key: key);
 
   @override
@@ -14,6 +19,7 @@ class ButtonLike extends StatefulWidget {
 }
 
 class _ButtonLikeState extends State<ButtonLike> {
+  int likeAtual = 0;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -33,12 +39,14 @@ class _ButtonLikeState extends State<ButtonLike> {
               width: 10,
             ),
             Text(
-              '${widget.like}',
+              '$likeAtual',
               style: const TextStyle(color: Colors.black),
             )
           ],
         ),
-        onPressed: () {},
+        onPressed: () {
+          likeAtual++;
+        },
       ),
     );
   }

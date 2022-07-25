@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:supercharged/supercharged.dart';
 
@@ -6,6 +7,7 @@ class PublishPost extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 40),
       height: 80,
@@ -21,11 +23,14 @@ class PublishPost extends StatelessWidget {
             height: 55,
             width: 55,
             decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage('${user!.photoURL}'),
+                fit: BoxFit.cover,
+              ),
               shape: BoxShape.circle,
               color: "EBF2FA".toColor(),
               border: Border.all(color: Colors.grey),
             ),
-            child: const Icon(Icons.person, size: 50),
           ),
           Container(
             height: 40,
