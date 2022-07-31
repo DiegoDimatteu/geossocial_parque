@@ -27,6 +27,8 @@ class ParquesController extends ChangeNotifier {
         Marker(
           markerId: MarkerId(parque.nome),
           position: LatLng(parque.latitude, parque.longitude),
+          icon: await BitmapDescriptor.fromAssetImage(
+              const ImageConfiguration(), 'assets/image/arvore.png'),
           /* icon: await BitmapDescriptor.fromAssetImage(
               const ImageConfiguration(), 'assets/image/logoM.png'), */
           onTap: () => {
@@ -44,8 +46,8 @@ class ParquesController extends ChangeNotifier {
   getPosicao() async {
     try {
       Position posicao = await _posicaoAtual();
-      lat = -15.83183;
-      long = -48.02899;
+      lat = posicao.latitude;
+      long = posicao.longitude;
       _mapsController.animateCamera(CameraUpdate.newLatLng(LatLng(lat, long)));
     } catch (e) {
       erro = e.toString();

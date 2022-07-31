@@ -5,18 +5,18 @@ class CardApp extends StatelessWidget {
   final Color cor;
   final String text;
   final double espacamento;
-  final String parqueImage;
   final double larguraImage, alturaImage;
   final double fontTamanho;
+  final IconData icon;
   const CardApp({
     Key? key,
     required this.cor,
     this.text = '',
     this.fontTamanho = 30.0,
-    required this.parqueImage,
     this.larguraImage = 100.0,
     this.alturaImage = 100.0,
     this.espacamento = 70,
+    required this.icon,
   }) : super(key: key);
 
   @override
@@ -38,12 +38,11 @@ class CardApp extends StatelessWidget {
               style:
                   TextStyle(fontSize: fontTamanho, color: "38B000".toColor()),
             ),
-            Padding(padding: EdgeInsets.only(top: espacamento)),
-            Image.asset(
-              parqueImage,
-              fit: BoxFit.contain,
-              height: alturaImage,
-              width: larguraImage,
+            const Padding(padding: EdgeInsets.only(top: 50)),
+            Icon(
+              icon,
+              color: const Color.fromARGB(255, 31, 129, 37),
+              size: 150,
             ),
           ],
         ),

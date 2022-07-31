@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geossocial_parque/screens/georede/widgets/header_georede.dart';
+import 'package:geossocial_parque/screens/georede/widgets/post_example.dart';
+import 'package:geossocial_parque/screens/georede/widgets/post_exempre_raw.dart';
 import 'package:geossocial_parque/screens/georede/widgets/post_published.dart';
 import 'package:geossocial_parque/screens/georede/widgets/publish_post.dart';
 import 'package:geossocial_parque/shared/utils/routes.dart';
@@ -61,6 +63,18 @@ class _GeoredeAState extends State<GeoredeA> {
               },
             ),
             ListTile(
+              title: const Text('Curiosidades'),
+              onTap: () {
+                Navigator.of(context).pushNamed(AppRoutes.curiosidadesA);
+              },
+            ),
+            ListTile(
+              title: const Text('Localização'),
+              onTap: () {
+                Navigator.of(context).pushNamed(AppRoutes.localizacaoA);
+              },
+            ),
+            ListTile(
               title: const Text('Sair'),
               onTap: () async {
                 final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -87,6 +101,30 @@ class _GeoredeAState extends State<GeoredeA> {
             const PublishPost(),
             const SizedBox(
               height: 40,
+            ),
+            PostExample(
+                text:
+                    '''Parque muito divertido!!! Adorei a vegetação, os animais e todos os locais de lazer!!! Recomendo para espairecer a alma kkkkkkk''',
+                name: '${user?.displayName}',
+                photo: '${user!.photoURL}'),
+            const SizedBox(
+              height: 15,
+            ),
+            const PostExampleRaw(
+              name: 'Rafa',
+              text:
+                  'Parque muito incrível!!!! Porém os bebedouros não estão em bom estado, dificultando quem gostaria de se hidratar no local.',
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const PostExampleRaw(
+              name: 'Gustavo',
+              text:
+                  'Muito boa a quadra de basquete que tem lá! Porém falta iluminação.',
+            ),
+            const SizedBox(
+              height: 15,
             ),
             const PostPublished(image: 'assets/image/parque_cortado.png'),
             const SizedBox(

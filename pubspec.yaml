@@ -69,6 +69,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/image/logo.png
+    - assets/image/arvore.png
     - assets/image/logo.svg
     - assets/image/cortado.png
     - assets/image/parque_cortado.png
@@ -82,6 +83,7 @@ flutter:
     - assets/image/reforma_aguas.jpg
     - assets/image/capivara_aguas.jpg
     - assets/image/google.png
+    - assets/image/romance.jpg
 
   #   - images/a_dot_ham.jpeg
 

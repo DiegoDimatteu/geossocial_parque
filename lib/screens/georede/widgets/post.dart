@@ -1,14 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:geossocial_parque/screens/georede/widgets/box_post.dart';
+import 'package:geossocial_parque/screens/georede/widgets/button.dart';
 import 'package:geossocial_parque/screens/georede/widgets/header_georede.dart';
-import 'package:geossocial_parque/screens/georede/widgets/post_published.dart';
-import 'package:geossocial_parque/screens/georede/widgets/publish_post.dart';
 import 'package:geossocial_parque/shared/utils/routes.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supercharged/supercharged.dart';
 
-class GeoredeC extends StatelessWidget {
-  const GeoredeC({Key? key}) : super(key: key);
+class Post extends StatelessWidget {
+  const Post({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,18 +56,6 @@ class GeoredeC extends StatelessWidget {
               },
             ),
             ListTile(
-              title: const Text('Curiosidades'),
-              onTap: () {
-                Navigator.of(context).pushNamed(AppRoutes.curiosidadesC);
-              },
-            ),
-            ListTile(
-              title: const Text('Localização'),
-              onTap: () {
-                Navigator.of(context).pushNamed(AppRoutes.localizacaoC);
-              },
-            ),
-            ListTile(
               title: const Text('Sair'),
               onTap: () async {
                 final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -85,29 +73,22 @@ class GeoredeC extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(bottom: 5.0),
-        child: ListView(
+        child: Column(
           children: [
+            const SizedBox(height: 24),
             HeaderGeorede(),
-            const SizedBox(
-              height: 30,
+            const SizedBox(height: 60),
+            const BoxPost(),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: const [
+                  Button(),
+                ],
+              ),
             ),
-            const PublishPost(),
-            const SizedBox(
-              height: 40,
-            ),
-            const PostPublished(image: 'assets/image/parque_cortado.png'),
-            const SizedBox(
-              height: 15,
-            ),
-            const PostPublished(image: 'assets/image/cachoeira_cortado.jpg'),
-            const SizedBox(
-              height: 15,
-            ),
-            const PostPublished(image: 'assets/image/ponte_cortado.jpg'),
-            const SizedBox(
-              height: 15,
-            ),
-            const PostPublished(image: 'assets/image/drone_cortado.jpg'),
           ],
         ),
       ),

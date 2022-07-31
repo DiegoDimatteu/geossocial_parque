@@ -19,7 +19,7 @@ class ButtonLike extends StatefulWidget {
 }
 
 class _ButtonLikeState extends State<ButtonLike> {
-  int likeAtual = 0;
+  int likeAtual = 10;
   @override
   Widget build(BuildContext context) {
     return SizedBox(

@@ -8,6 +8,7 @@ import 'package:geossocial_parque/screens/curiosidades/curiosidades_c.dart';
 import 'package:geossocial_parque/screens/georede/georede_a.dart';
 import 'package:geossocial_parque/screens/georede/georede_b.dart';
 import 'package:geossocial_parque/screens/georede/georede_c.dart';
+import 'package:geossocial_parque/screens/georede/widgets/post.dart';
 import 'package:geossocial_parque/screens/home/home.dart';
 import 'package:geossocial_parque/screens/localizacao/localizacao_a.dart';
 import 'package:geossocial_parque/screens/localizacao/localizacao_b.dart';
@@ -39,14 +40,24 @@ class MyApp extends StatelessWidget {
         AppRoutes.login: (_) => const Login(),
         AppRoutes.home: (_) => const Home(),
         AppRoutes.georedeA: (_) => const GeoredeA(),
+        AppRoutes.post: (_) => const Post(),
         AppRoutes.georedeB: (_) => const GeoredeB(),
         AppRoutes.georedeC: (_) => const GeoredeC(),
         AppRoutes.curiosidadesA: (_) => const CuriosidadesA(),
         AppRoutes.curiosidadesB: (_) => const CuriosidadesB(),
         AppRoutes.curiosidadesC: (_) => const CuriosidadesC(),
-        AppRoutes.localizacaoA: (_) => const LocalizacaoA(),
-        AppRoutes.localizacaoB: (_) => const LocalizacaoB(),
-        AppRoutes.localizacaoC: (_) => const LocalizacaoC(),
+        AppRoutes.localizacaoA: (_) => const LocalizacaoA(
+              latitude: -15.83623,
+              longitude: -48.02343,
+            ),
+        AppRoutes.localizacaoB: (_) => const LocalizacaoB(
+              latitude: -15.81315,
+              longitude: -48.05621,
+            ),
+        AppRoutes.localizacaoC: (_) => const LocalizacaoC(
+              latitude: -15.816612,
+              longitude: -48.077794,
+            ),
       },
     );
   }
