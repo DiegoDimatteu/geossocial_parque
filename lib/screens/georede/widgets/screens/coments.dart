@@ -1,14 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:geossocial_parque/screens/georede/widgets/box_post.dart';
-import 'package:geossocial_parque/screens/georede/widgets/button.dart';
-import 'package:geossocial_parque/screens/georede/widgets/header_georede.dart';
+import 'package:geossocial_parque/screens/georede/widgets/header_post_published.dart';
+import 'package:geossocial_parque/screens/georede/widgets/screens/widgets/box_post_coments.dart';
 import 'package:geossocial_parque/shared/utils/routes.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supercharged/supercharged.dart';
 
-class Post extends StatelessWidget {
-  const Post({Key? key}) : super(key: key);
+class Coments extends StatelessWidget {
+  const Coments({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,19 +75,9 @@ class Post extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 24),
-            HeaderGeorede(),
+            HeaderPostPublished(),
             const SizedBox(height: 60),
-            const BoxPost(),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: const [
-                  Button(),
-                ],
-              ),
-            ),
+            const BoxPostComents(),
           ],
         ),
       ),

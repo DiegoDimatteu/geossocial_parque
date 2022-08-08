@@ -1,17 +1,15 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:supercharged/supercharged.dart';
 
-class Header extends PreferredSize {
-  final user = FirebaseAuth.instance.currentUser;
-  Header({Key? key})
+class HeaderPostPublished extends PreferredSize {
+  HeaderPostPublished({Key? key})
       : super(
             key: key,
             preferredSize: const Size.fromHeight(160),
             child: Container(
               color: Colors.transparent,
               child: Padding(
-                padding: const EdgeInsets.only(top: 60),
+                padding: const EdgeInsets.only(top: 35),
                 child: Row(
                   children: [
                     Builder(

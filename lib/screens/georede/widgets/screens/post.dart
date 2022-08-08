@@ -1,19 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:geossocial_parque/screens/georede/widgets/header_georede.dart';
-import 'package:geossocial_parque/screens/georede/widgets/post_published.dart';
+import 'package:geossocial_parque/screens/georede/widgets/screens/widgets/box_post.dart';
+import 'package:geossocial_parque/screens/georede/widgets/header_post_published.dart';
 import 'package:geossocial_parque/shared/utils/routes.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supercharged/supercharged.dart';
 
-class GeoredeC extends StatelessWidget {
-  const GeoredeC({Key? key}) : super(key: key);
+class Post extends StatelessWidget {
+  const Post({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     return Scaffold(
-      appBar: HeaderGeorede(),
       backgroundColor: "004B23".toColor(),
       drawer: Container(
         child: ListView(
@@ -56,18 +55,6 @@ class GeoredeC extends StatelessWidget {
               },
             ),
             ListTile(
-              title: const Text('Curiosidades'),
-              onTap: () {
-                Navigator.of(context).pushNamed(AppRoutes.curiosidadesC);
-              },
-            ),
-            ListTile(
-              title: const Text('Localização'),
-              onTap: () {
-                Navigator.of(context).pushNamed(AppRoutes.localizacaoC);
-              },
-            ),
-            ListTile(
               title: const Text('Sair'),
               onTap: () async {
                 final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -85,21 +72,12 @@ class GeoredeC extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(bottom: 5.0),
-        child: ListView(
-          children: const [
-            PostPublished(image: 'assets/image/parque_cortado.png'),
-            SizedBox(
-              height: 15,
-            ),
-            PostPublished(image: 'assets/image/cachoeira_cortado.jpg'),
-            SizedBox(
-              height: 15,
-            ),
-            PostPublished(image: 'assets/image/ponte_cortado.jpg'),
-            SizedBox(
-              height: 15,
-            ),
-            PostPublished(image: 'assets/image/drone_cortado.jpg'),
+        child: Column(
+          children: [
+            const SizedBox(height: 24),
+            HeaderPostPublished(),
+            const SizedBox(height: 60),
+            const BoxPost(),
           ],
         ),
       ),

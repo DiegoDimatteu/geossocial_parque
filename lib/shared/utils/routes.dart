@@ -3,6 +3,8 @@ class AppRoutes {
   static const String home = '/home';
   static const String georedeA = '/georedeA';
   static const String post = '/post';
+  static const String viewComents = '/viewComents';
+  static const String coments = '/coments';
   static const String georedeB = '/georedeB';
   static const String georedeC = '/georedeC';
   static const String curiosidadesA = '/curiosidadesA';

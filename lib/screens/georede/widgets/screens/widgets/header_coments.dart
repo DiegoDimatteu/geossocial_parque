@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:geossocial_parque/screens/georede/widgets/publish_post.dart';
+import 'package:geossocial_parque/screens/georede/widgets/screens/widgets/space_coments.dart';
 import 'package:supercharged/supercharged.dart';
 
-class HeaderGeorede extends PreferredSize {
-  HeaderGeorede({Key? key})
+class HeaderComents extends PreferredSize {
+  HeaderComents({Key? key})
       : super(
             key: key,
             preferredSize: const Size.fromHeight(260),
@@ -57,7 +57,7 @@ class HeaderGeorede extends PreferredSize {
                     const SizedBox(height: 30),
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 40.0),
-                      child: PublishPost(),
+                      child: SpaceComents(),
                     ),
                   ],
                 ),

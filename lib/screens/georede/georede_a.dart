@@ -1,10 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geossocial_parque/screens/georede/widgets/header_georede.dart';
-import 'package:geossocial_parque/screens/georede/widgets/post_example.dart';
-import 'package:geossocial_parque/screens/georede/widgets/post_exempre_raw.dart';
-import 'package:geossocial_parque/screens/georede/widgets/post_published.dart';
-import 'package:geossocial_parque/screens/georede/widgets/publish_post.dart';
+import 'package:geossocial_parque/screens/georede/widgets/view_publisheds.dart';
 import 'package:geossocial_parque/shared/utils/routes.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supercharged/supercharged.dart';
@@ -18,12 +15,14 @@ class GeoredeA extends StatefulWidget {
 
 class _GeoredeAState extends State<GeoredeA> {
   final user = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: "004B23".toColor(),
+      appBar: HeaderGeorede(),
       drawer: Container(
-        child: ListView(
+        child: Column(
           children: [
             DrawerHeader(
               decoration: BoxDecoration(
@@ -90,58 +89,7 @@ class _GeoredeAState extends State<GeoredeA> {
         height: MediaQuery.of(context).size.height,
         color: const Color.fromRGBO(235, 242, 250, 1),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(bottom: 5.0),
-        child: ListView(
-          children: [
-            HeaderGeorede(),
-            const SizedBox(
-              height: 30,
-            ),
-            const PublishPost(),
-            const SizedBox(
-              height: 40,
-            ),
-            PostExample(
-                text:
-                    '''Parque muito divertido!!! Adorei a vegetação, os animais e todos os locais de lazer!!! Recomendo para espairecer a alma kkkkkkk''',
-                name: '${user?.displayName}',
-                photo: '${user!.photoURL}'),
-            const SizedBox(
-              height: 15,
-            ),
-            const PostExampleRaw(
-              name: 'Rafa',
-              text:
-                  'Parque muito incrível!!!! Porém os bebedouros não estão em bom estado, dificultando quem gostaria de se hidratar no local.',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const PostExampleRaw(
-              name: 'Gustavo',
-              text:
-                  'Muito boa a quadra de basquete que tem lá! Porém falta iluminação.',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const PostPublished(image: 'assets/image/parque_cortado.png'),
-            const SizedBox(
-              height: 15,
-            ),
-            const PostPublished(image: 'assets/image/cachoeira_cortado.jpg'),
-            const SizedBox(
-              height: 15,
-            ),
-            const PostPublished(image: 'assets/image/taguaparque_entrada.jpg'),
-            const SizedBox(
-              height: 15,
-            ),
-            const PostPublished(image: 'assets/image/taguaparque_portao.jpg'),
-          ],
-        ),
-      ),
+      body: const ViewPublisheds(),
     );
   }
 }

@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:geossocial_parque/screens/georede/widgets/button_custom.dart';
 import 'package:geossocial_parque/screens/georede/widgets/button_like.dart';
+import 'package:geossocial_parque/shared/utils/routes.dart';
 import 'package:supercharged/supercharged.dart';
 
-class PostExampleRaw extends StatelessWidget {
+class TextPost extends StatelessWidget {
   final String text;
   final String name;
-  const PostExampleRaw({Key? key, required this.text, required this.name})
+  final String photo;
+  const TextPost(
+      {Key? key, required this.text, required this.name, required this.photo})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Color cor = Colors.green;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 40),
       height: 210,
@@ -27,14 +29,17 @@ class PostExampleRaw extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  height: 35,
-                  width: 35,
+                  height: 55,
+                  width: 55,
                   decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(photo),
+                      fit: BoxFit.cover,
+                    ),
                     shape: BoxShape.circle,
                     color: "EBF2FA".toColor(),
                     border: Border.all(color: Colors.grey),
                   ),
-                  child: const Icon(Icons.person, size: 25),
                 ),
                 const SizedBox(
                   width: 10,
@@ -48,12 +53,12 @@ class PostExampleRaw extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 7,
+            height: 14,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: SizedBox(
-              height: 95,
+              height: 65,
               child: Expanded(
                 child: Text(
                   text,
@@ -70,7 +75,8 @@ class PostExampleRaw extends StatelessWidget {
                 icon: Icons.thumb_up_alt_sharp,
                 text: '',
               ),
-              ButtonCustom(icon: Icons.comment_outlined),
+              ButtonCustom(
+                  icon: Icons.comment_outlined, route: AppRoutes.viewComents),
               ButtonCustom(icon: Icons.share),
             ],
           )

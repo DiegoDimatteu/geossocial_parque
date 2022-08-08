@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:geossocial_parque/shared/utils/routes.dart';
 import 'package:supercharged/supercharged.dart';
 
-class PublishPost extends StatelessWidget {
-  const PublishPost({Key? key}) : super(key: key);
+class SpaceComents extends StatelessWidget {
+  const SpaceComents({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class PublishPost extends StatelessWidget {
               child: const Padding(
                 padding: EdgeInsets.only(top: 12.0, left: 5),
                 child: Text(
-                  'Começar publicação',
+                  'Criar comentário',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.grey,
@@ -55,7 +55,7 @@ class PublishPost extends StatelessWidget {
           ],
         ),
         onTap: () {
-          Navigator.of(context).pushNamed(AppRoutes.post);
+          Navigator.of(context).pushNamed(AppRoutes.coments);
         },
       ),
     );

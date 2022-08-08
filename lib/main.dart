@@ -1,4 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:geossocial_parque/screens/georede/widgets/screens/coments.dart';
+import 'package:geossocial_parque/screens/georede/widgets/screens/view_coments.dart';
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_config/flutter_config.dart';
 import 'package:geossocial_parque/firebase_options.dart';
@@ -8,7 +11,7 @@ import 'package:geossocial_parque/screens/curiosidades/curiosidades_c.dart';
 import 'package:geossocial_parque/screens/georede/georede_a.dart';
 import 'package:geossocial_parque/screens/georede/georede_b.dart';
 import 'package:geossocial_parque/screens/georede/georede_c.dart';
-import 'package:geossocial_parque/screens/georede/widgets/post.dart';
+import 'package:geossocial_parque/screens/georede/widgets/screens/post.dart';
 import 'package:geossocial_parque/screens/home/home.dart';
 import 'package:geossocial_parque/screens/localizacao/localizacao_a.dart';
 import 'package:geossocial_parque/screens/localizacao/localizacao_b.dart';
@@ -41,6 +44,8 @@ class MyApp extends StatelessWidget {
         AppRoutes.home: (_) => const Home(),
         AppRoutes.georedeA: (_) => const GeoredeA(),
         AppRoutes.post: (_) => const Post(),
+        AppRoutes.viewComents: (_) => const ViewComents(),
+        AppRoutes.coments: (_) => const Coments(),
         AppRoutes.georedeB: (_) => const GeoredeB(),
         AppRoutes.georedeC: (_) => const GeoredeC(),
         AppRoutes.curiosidadesA: (_) => const CuriosidadesA(),
